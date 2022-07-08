@@ -1,0 +1,35 @@
+.todo-wrapper{
+    height: 100%;
+    overflow-y: auto;
+}
+
+.todo-item.completed{
+    .todo-text{
+        color: rgba($color: white, $alpha: 0.73);
+        font-size: 20px;
+    }
+    .check-box{
+        background: rgb(9, 218, 89);
+        border: transparent;
+        i{
+            opacity: 1;
+        }
+    }
+}
+.todo-item:hover{
+    .todo-text{
+        color: white;
+    }
+    .check-box{
+        border-color: grey;
+        background-color: rgba($color: white, $alpha: 0.87);
+    }
+}
+.add-btn i {
+    margin-right: 10px;
+
+}
+app-todo-item{
+    display: block;
+    margin-bottom: 12px;
+}

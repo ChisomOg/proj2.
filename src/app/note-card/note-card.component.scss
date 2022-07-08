@@ -1,0 +1,19 @@
+.note-card{
+    background-color: rgba($color: black, $alpha: 0.5);
+    color: rgba($color: white, $alpha: 0.96);
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.12s;
+    &:hover {
+        background-color: rgba($color: black, $alpha: 0.7);
+        backdrop-filter: blur(3px);
+    }
+}
+.note-title{
+    font-weight: 600;
+    font-size: 19px;
+}
+.note-content{
+    margin-top: 7px;
+}

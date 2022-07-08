@@ -1,0 +1,31 @@
+<div class="edit-note-wrapper container has-blurr-bg">
+
+    <h2 class="is-bold"> Edit Note</h2>
+
+    <p *ngIf="!note">Note not found</p>
+
+    <form #form="ngForm" (ngSubmit)="formSubmit(form)" *ngIf="note">
+        <div class="form-field">
+            <input class="textbox" #titleField="ngModel"  [ngModel]="note.title" name="title" type="text" placeholder=" Enter Note Title..." required="true"  minlength="3">
+           <ng-container *ngIf="titleField.invalid && titleField.errors">
+            <p *ngIf="titleField.errors['required']">Please enter notetitle</p>
+            <p *ngIf="titleField.errors['minlength']">must be more than 3 characters</p>
+           </ng-container>
+            
+        </div>
+       
+        <div class="form-field">
+            <textarea ngModel name="content" class="textArea" [ngModel]="note.content" placeholder="Enter Note..."></textarea>
+        </div>
+        
+
+        <div class="btn-container">
+            <a routerLink="../" class="btn"> Cancel</a>
+            <button type="button" class="btn " (click)="deleteNote()" >Delete</button>
+            <button type="submit" class="btn align-end"> Save</button>
+         </div>
+         
+    </form>
+
+</div>
+

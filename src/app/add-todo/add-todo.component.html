@@ -1,0 +1,24 @@
+<div class="add-todo-wrapper container has-blurr-bg">
+
+    <h2 class="is-bold"> Add Todo</h2>
+
+    <form #form="ngForm" (ngSubmit)="formSubmit(form)">
+        <div class="form-field">
+            <input class="textbox" #textField="ngModel"  ngModel name="text" type="text" placeholder=" Enter Text..." required="true"  minlength="3">
+           <ng-container *ngIf=" textField.invalid && (textField.errors)">
+            <p *ngIf="textField.errors?.['required']">Please enter text</p>
+            <p *ngIf="textField.errors?.['minlength']">there must be more than 3 characters</p>
+           </ng-container>
+            
+        </div>
+        
+
+        <div class="btn-container">
+            <a routerLink="../" class="btn"> Cancel</a>
+            <button type="submit" [disabled]="form.form.invalid" class="btn align-end"> Create Todo</button>
+         </div>
+         
+    </form>
+
+</div>
+

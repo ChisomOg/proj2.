@@ -1,0 +1,10 @@
+.edit-note-wrapper{
+    padding: 30px;
+    border-radius: 5px;
+    max-height: 100%;
+    overflow: auto;
+}
+.has-blurr-bg{
+    background: rgba($color: grey, $alpha: 0.47);
+    backdrop-filter: blur(20px);
+}

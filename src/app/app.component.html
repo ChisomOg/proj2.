@@ -1,0 +1,36 @@
+<div class="carousel-container app-wrapper">
+    <img *ngFor="let images of images; let i = index " [src]="images.imageSrc" [alt]="images.imageAlt"
+  [ngClass]="{'image-active': selectedIndex === i}" class="fade bg-img">
+
+<div class="top-section">
+  <h1>{{dateTime| async | date: 'shortTime'}}</h1>
+  <h2> {{dateTime| async |date: 'd MMMM y '}}</h2>
+</div>
+
+<div class="bt">
+<a *ngIf="controls" class="btn-carousel">
+  <div class="btn-prev btns">
+  <i class="material-icons"
+  (click)="onPrevClick()">chevron_left</i>
+</div>
+</a>
+
+<a *ngIf="controls" class="btn-carousel">
+  <div class="btn-next btns">
+  <i class="material-icons-outlined"
+  (click)="onNextClick()">chevron_right</i>
+</div>
+</a>
+</div>
+
+<div class="content-section" [@routeAni]="prepareRoute(outlet)">
+<router-outlet #outlet="outlet"></router-outlet>
+</div>
+
+<div class="bottom-section">
+ <app-tabs></app-tabs>
+</div>
+
+<app-notification></app-notification>
+
+</div>
